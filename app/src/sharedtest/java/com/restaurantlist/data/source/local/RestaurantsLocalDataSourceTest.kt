@@ -8,6 +8,7 @@ import androidx.test.filters.MediumTest
 import com.restaurantlist.MainCoroutineRule
 import com.restaurantlist.data.Restaurant
 import com.restaurantlist.data.Result
+import com.restaurantlist.data.source.RestaurantsDataSource
 import com.restaurantlist.data.succeeded
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
