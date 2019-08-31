@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Restaurant List</string>
     <string name="action_settings">Settings</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="menu_sort">Sort</string>
+    <string name="cost">Cost</string>
+    <string name="default_sorting">Default</string>
+    <string name="average_rating">Average Rating</string>
+    <string name="distance">Distance</string>
+    <string name="average_rating_value">Average Rating : %s</string>
+    <string name="distance_value">%s Kms</string>
+    <string name="error">Oops! Looks like there is some issue!</string>
 </resources>

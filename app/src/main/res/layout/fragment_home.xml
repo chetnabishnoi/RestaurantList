@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="viewmodel"
+            type="com.restaurantlist.home.HomeViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/restaurantContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/restaurantLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/restaurant_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:items="@{viewmodel.items}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/noRestaurants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="@{viewmodel.isDataLoadingError? View.VISIBLE: View.GONE}">
+
+            <TextView
+                android:id="@+id/noRestaurantMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/list_item_padding"
+                android:text="@string/error" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/progress_bar_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewmodel.dataLoading? View.VISIBLE: View.GONE}">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
