@@ -6,8 +6,6 @@
 
         <import type="android.view.View" />
 
-        <import type="androidx.core.content.ContextCompat" />
-
         <variable
             name="viewmodel"
             type="com.restaurantlist.home.HomeViewModel" />
